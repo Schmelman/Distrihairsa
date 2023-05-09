@@ -229,7 +229,7 @@
             Contactanos
           </h2>
         </div>
-        <form method='POST' action='./enviar.php' id="formulario">
+        <form method='POST' id="form">
           <div class="form-group">
             <input type="text" class="form-control" name='nombre' id="nombre" placeholder="Nombre">
           </div>
@@ -243,13 +243,18 @@
             <input type="text" class="message-box form-control" name='mensaje' id="mensaje" placeholder="Mensaje">
           </div>
           <div class="d-flex justify-content-center mt-4 ">
-            <button type="submit">
+            <button type="submit" id="button" value="ENVIAR">
               <a>ENVIAR</a>
             </button>
           </div>
         </form>
-      </div>
-    </div>
+        <script   type="text/javascript"
+                  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script   type="text/javascript">
+          emailjs.init('ZGTu6OIWkjqGTXulk')
+        </script>
+  </div>
+</div>
 
   </section>
 
@@ -420,5 +425,26 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
+<script>
+const btn = document.getElementById('button');
 
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_h7g09j2';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'ENVIAR';
+      alert('Mensaje enviado correctamente');
+    }, (err) => {
+      btn.value = 'ENVIAR';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
 </html>
