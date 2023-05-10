@@ -172,11 +172,6 @@ a:focus {
   outline: none;
 }
 
-.custom_nav-container .navbar-toggler .navbar-toggler-icon {
-  background-image: url(../images/menu.png);
-  background-size: 35px;
-}
-
 /*end header section*/
 .hero_section {
   text-align: center;
@@ -229,7 +224,7 @@ a:focus {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  padding: 75px 45px;
+  padding: 15px 45px;
   background-image: url(../images/about.jpg);
   background-size: 100%;
   background-color: #1d002c;
@@ -259,7 +254,7 @@ a:focus {
   background-color: transparent;
   border: 1.5px solid #ffffff;
   color: #ffffff;
-  margin-top: 75%;
+  margin-top: 45%;
 }
 
 .about_section .detail a:hover {
@@ -322,7 +317,7 @@ a:focus {
 }
 
 .why_section .why_container .img_box {
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
 }
 
